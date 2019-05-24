@@ -1,0 +1,12 @@
+{
+  "name": "teamweek-bamboo",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "lodash": "^4.17.11",
+    "moment": "^2.24.0",
+    "node-fetch": "^2.6.0",
+    "yargs": "^13.2.4"
+  }
+}
