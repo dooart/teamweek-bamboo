@@ -25,6 +25,8 @@ Teamweek currently only has OAuth support, so for the time being you'll unfortun
 3. Create a new `config.json` file with the contents of `config.json.sample`.
 4. Fill in the attributes in `config.json` (run `yarn config-help` if you need more information).
 
+⚠️ Make sure the vacation tasks in Teamweek are assigned to the vacation project specified in the configuration.
+
 ### 3. Run it
 Just run `yarn start`. The default check period is the **current year**.
 
