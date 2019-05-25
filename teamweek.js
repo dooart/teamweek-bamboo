@@ -2,6 +2,7 @@ const _ = require("lodash");
 const { URLSearchParams } = require("url");
 const fetch = require("node-fetch");
 
+// This value is hardcoded in Teamweek & is public. Might want to extract to config at some point.
 const INITIAL_AUTH_TOKEN =
   "Basic dGVhbXdlZWtfdGltZWxpbmU6YjhiZmFmY2MwNmJiZTU5ZmJlYWI0Y2M2ZjA3MWZkYTQ=";
 
