@@ -42,7 +42,11 @@ const argv = require("yargs")
     describe: "BambooHR authentication token."
   })
   .option("bamboo.workspaceName", {
-    describe: "The name of your BambooHR workspace."
+    describe: "The name of your BambooHR workspace.",
+    default: "toggl"
+  })
+  .option("bamboo.timeOffId", {
+    describe: 'The "time off" id for vacations on your BambooHR workspace.'
   })
   .help().argv;
 

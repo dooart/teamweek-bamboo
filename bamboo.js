@@ -11,7 +11,7 @@ const getTimeOffRequests = async (params, status) => {
   }/v1/time_off/requests`;
   const query = `?start=${params.startDate}&end=${
     params.endDate
-  }&status=${status}&type=83`;
+  }&status=${status}&type=${params.timeOffId}`;
 
   try {
     const response = await fetch(`${url}/${query}`, getHeaders(params));
