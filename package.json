@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
+  "scripts": {
+    "start": "node index.js",
+    "config-help": "node index.js --help"
+  },
   "dependencies": {
     "lodash": "^4.17.11",
     "moment": "^2.24.0",
