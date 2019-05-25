@@ -131,6 +131,17 @@ const argv = require("yargs")
   })
   .option("teamweek.auth", {
     describe: "Teamweek authentication token."
+  .option("teamweek.authToken", {
+    describe:
+      "Teamweek authentication token. If you don't have a token, use your login credentials with authUser and authPassword."
+  })
+  .option("teamweek.authUser", {
+    describe:
+      "Your username on Teamweek. Use this option if you don't have a token."
+  })
+  .option("teamweek.authPassword", {
+    describe:
+      "Your password on Teamweek. Use this option if you don't have a token."
   })
   .option("teamweek.workspaceId", {
     describe: "The id of your Teamweek workspace."
@@ -141,6 +152,7 @@ const argv = require("yargs")
   .option("teamweek.groupId", {
     describe:
       "Optional. The id of a user group in Teamweek, in case you don't want to compare the whole workspace."
+      "The id of the user group in Teamweek containing the people whose vacations you want to check."
   })
   .option("bamboo.auth", {
     describe: "BambooHR authentication token."

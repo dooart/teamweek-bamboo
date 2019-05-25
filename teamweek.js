@@ -1,9 +1,36 @@
 const _ = require("lodash");
+const { URLSearchParams } = require("url");
 const fetch = require("node-fetch");
+
+const INITIAL_AUTH_TOKEN =
+  "Basic dGVhbXdlZWtfdGltZWxpbmU6YjhiZmFmY2MwNmJiZTU5ZmJlYWI0Y2M2ZjA3MWZkYTQ=";
 
 const getHeaders = params => ({
   headers: { Authorization: params.auth }
 });
+
+const authenticate = async params => {
+  if (params.authToken) return params.authToken;
+  const url = "https://app.teamweek.com/api/v4/authenticate/token";
+
+  const headers = {
+    Authorization: INITIAL_AUTH_TOKEN
+  };
+
+  const body = new URLSearchParams();
+  body.append("username", params.authUser);
+  body.append("password", params.authPassword);
+  body.append("grant_type", "password");
+
+  const response = await fetch(url, {
+    method: "POST",
+    headers,
+    body
+  });
+
+  const json = await response.json();
+  return json.access_token;
+};
 
 const getTeamweekVacations = async params => {
   const url = `https://teamweek.com/api/v4/${
@@ -58,6 +85,9 @@ const getTeamweekUsers = async params => {
 };
 
 const getTeamweekData = async params => {
+  const token = await authenticate(params);
+  params.auth = `Bearer ${token}`;
+
   const vacations = await getTeamweekVacations(params);
   const users = await getTeamweekUsers(params);
   const vacationsWithEmail = vacations.map(vacation => ({

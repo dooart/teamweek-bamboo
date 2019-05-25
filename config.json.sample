@@ -1,13 +1,15 @@
 {
   "teamweek": {
-    "auth": "Bearer XXXXXXX",
+    "authToken": null,
+    "authUser": "xxxxxxx",
+    "authPassword": "xxxxxxx",
     "workspaceId": 111,
     "vacationProjectId": 111,
     "groupId": 111
   },
 
   "bamboo": {
-    "auth": "XXXXXXX",
-    "workspaceName": "xxxx"
+    "auth": "xxxxxxx",
+    "workspaceName": "xxxxxxx"
   }
 }
