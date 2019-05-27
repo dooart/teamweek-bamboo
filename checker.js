@@ -108,7 +108,11 @@ const checker = async config => {
   const bambooData = await getBambooData(bambooParams);
 
   const errors = compare(teamweekData, bambooData, period);
-  errors.forEach(error => console.log(error + "\n"));
+  if (errors.length) {
+    errors.forEach(error => console.log(error + "\n"));
+  } else {
+    console.log("No inconsistencies found! 🙌");
+  }
 };
 
 module.exports = checker;
