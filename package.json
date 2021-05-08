@@ -8,7 +8,7 @@
     "config-help": "node index.js --help"
   },
   "dependencies": {
-    "lodash": "^4.17.11",
+    "lodash": "^4.17.21",
     "moment": "^2.24.0",
     "node-fetch": "^2.6.0",
     "yargs": "^13.2.4"
